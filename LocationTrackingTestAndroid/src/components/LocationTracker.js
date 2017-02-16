@@ -28,8 +28,8 @@ class GeoLocationTracker extends React.Component {
   componentDidMount() {
     // Obtain an initial geolcation
     // setInterval(() => navigator.geolocation.getCurrentPosition(this.handlePositionUpdate), 5000);
-    this.intervalId = BackgroundTimer.setInterval(()=> navigator.geolocation.getCurrentPosition(this.handlePositionUpdate), 5000);    
-    this.startLocationWatch();
+    this.intervalId = BackgroundTimer.setInterval(()=> navigator.geolocation.getCurrentPosition(this.handlePositionUpdate), 10000);    
+    // this.startLocationWatch();
 
   }
 

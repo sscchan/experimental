@@ -14,6 +14,8 @@ import {
   Button
 } from 'react-native';
 
+import { Platform, Vibration } from 'react-native';
+
 import LocationTracker from './src/components/LocationTracker.js';
 
 export default class LocationTrackingTest extends Component {
@@ -43,7 +45,14 @@ export default class LocationTrackingTest extends Component {
       locationHistory: newLocationHistory
     });
 
+    this.vibratePhone();
     this.handlePushToServer();
+  }
+
+  vibratePhone = () => {
+    let pattern = [0, 500];
+    let patternLiteral = '[0, 500, 200, 500]';
+    Vibration.vibrate(pattern);
   }
 
   render() {
